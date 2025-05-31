@@ -23,21 +23,18 @@ const toggleLinks = ()=>{
 return(
     <nav className='bg-white shadow-md'>
         <div className='nav-center '>
-          <div className='nav-header flex items-center justify-between px-2 py-2'>
-             Code Pulse
-              <button id="menu-btn" className='block hamburger md:hidden focus:outline-none' onClick={toggleLinks}>
-      <span className='hamburger-top'></span>
-   <span className="hamburger-middle"></span>
-    <span className="hamburger-bottom"></span>
-
-   </button>
+          <div className='nav-header flex items-center justify-between p-3 '>
+            <h1 > Code <span>Pulse</span> </h1>
+               <button className='nav-toggle md:hidden' onClick={toggleLinks}>
+            <FaBars />
+          </button>
           </div>
-          <div className='links-container ' ref={linksContainerRef}>
-            <ul className='links absolute  flex-col items-center hidden self-end  py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md' ref={linksRef} >
+          <div className='links-container  h-0 block overflow-hidden  ' ref={linksContainerRef}>
+            <ul className='links ' ref={linksRef} >
               {links.map((link)=>{
                 const {id,url,text}= link
                 return(
-                    <li key={id}><a href={url} className=' capitalize block py-0.5 px-1 transition-300 '>{text}</a></li>
+                    <li key={id} className=' capitalize block py-0.5 px-1 text-center '><a href={url} >{text}</a></li>
                 )
               })
 
@@ -49,7 +46,7 @@ return(
                 const{id, url, icon}= socialIcon
                 return(
                     <li key={id}>
-                        <a href={url}>{icon}</a>
+                        <a className='p-5' href={url}>{icon}</a>
                     </li>
                 )
              })

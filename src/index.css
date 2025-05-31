@@ -1,64 +1,72 @@
 @import "tailwindcss";
- .hamburger{
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  transition: all 0.25s;
-  position: relative;
- }
- .hamburger-top, .hamburger-middle, .hamburger-bottom{
-   position: absolute   ;
-    top: 0;
-   left: 0;
-   width: 24px;
-   height: 3px;
-   background: black;
-   transform: rotate(0);
-   transition: all 0.5s;
- }
- .hamburger-middle{
-  transform: translateY(7px);
- }
- .hamburger-bottom{ transform: translateY(14px);
-  
- }
- .open{
+
+
+
+
+h1{
+color: black;
+font-weight: bolder;
+font-size: 20px;
+text-shadow: 7px 3px 8px  black;
+}
+span{
+    color: grey;
+}
+.nav-toggle:hover {
+  color: var(--clr-primary-1);
   transform: rotate(90deg);
-  transform: translateY(0px);
- }
- .open .hamburger-top{
-  transform: rotate(45deg) translateY(6px) translate(6px);
- }
- .open .hamburger-middle{
+}
+
+.links a {
+  transition:all 0.3s linear;
+  padding: 0.5rem 1rem;
+}
+.links a:hover {
+  
+  padding-left: 1.5rem;
+}
+.social-icons {
   display: none;
- }
- .open .hamburger-bottom{
-  transform: rotate(-45deg) translateY(6px) translate(-6px);
- }
-@media screen and (min-width: 992px){
-    .links-container {
-  height: 0;
-  overflow: hidden;
-  transition: var(--transition);
+}
+.links-container {
+transition:all 0.3s linear;
 }
 .show-container {
   height: 10rem;
 }
-}
-
-@media screen and (min-width: 800px){
-.links-container {
+@media screen and (min-width: 800px) {
+     .links-container {
     height: auto !important;
   }
-  .links {
-    display: flex;
-  }
-  .nav-center {
+   .nav-center {
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+  }
+  .links{
+    display: flex;
+  }
+   .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+   .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+  .social-icons{
+    display: flex;
+    justify-content: space-between;
+  }
+   .social-icons a {
+    margin: 0 0.5rem;
+    
+    transition:all 0.3s linear;
+  }
+  .social-icons a:hover {
+    color: var(--clr-primary-7);
   }
 }
